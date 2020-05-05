@@ -1,0 +1,14 @@
+bilgisayar
+elma
+izmir
+konya
+sandalye
+battaniye
+veysel
+kitap
+okul
+ahmet
+mehmet
+cam
+telefon
+Bolu

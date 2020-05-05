@@ -1,0 +1,15 @@
+c:\users\veysel saltan\documents\visual studio 2015\Projects\adamasmaca\adamasmaca\bin\Debug\adamasmaca.exe.config
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\adamasmaca\adamasmaca\bin\Debug\adamasmaca.exe
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\adamasmaca\adamasmaca\bin\Debug\adamasmaca.pdb
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\adamasmaca\adamasmaca\obj\Debug\adamasmaca.csprojResolveAssemblyReference.cache
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\adamasmaca\adamasmaca\obj\Debug\adamasmaca.Properties.Resources.resources
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\adamasmaca\adamasmaca\obj\Debug\adamasmaca.csproj.GenerateResource.Cache
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\adamasmaca\adamasmaca\obj\Debug\adamasmaca.exe
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\adamasmaca\adamasmaca\obj\Debug\adamasmaca.pdb
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\adamasmaca\adamasmaca\obj\Debug\adamasmaca.FormKelimeyiBul.resources
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\adamasmaca\adamasmaca\obj\Debug\adamasmaca.SkorListesi.resources
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\adamasmaca\adamasmaca\obj\Debug\adamasmaca.FormUzunluk.resources
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\adamasmaca\adamasmaca\obj\Debug\adamasmaca.FormKelimeEkleSil.resources
+C:\Users\Veysel Saltan\Desktop\Projeler\adamasmaca\adamasmaca\bin\Debug\adamasmaca.exe.config
+C:\Users\Veysel Saltan\Desktop\Projeler\adamasmaca\adamasmaca\obj\Debug\adamasmaca.exe
+C:\Users\Veysel Saltan\Desktop\Projeler\adamasmaca\adamasmaca\obj\Debug\adamasmaca.pdb
