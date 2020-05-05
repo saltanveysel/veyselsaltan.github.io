@@ -1,0 +1,36 @@
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Odev5\Odev5\bin\Debug\Odev5.exe.config
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Odev5\Odev5\bin\Debug\Odev5.exe
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Odev5\Odev5\bin\Debug\Odev5.pdb
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Odev5\Odev5\obj\Debug\Odev5.csprojResolveAssemblyReference.cache
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Odev5\Odev5\obj\Debug\Odev5.FormAna.resources
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Odev5\Odev5\obj\Debug\Odev5.FormLogin.resources
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Odev5\Odev5\obj\Debug\Odev5.Properties.Resources.resources
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Odev5\Odev5\obj\Debug\Odev5.csproj.GenerateResource.Cache
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Odev5\Odev5\obj\Debug\Odev5.exe
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Odev5\Odev5\obj\Debug\Odev5.pdb
+C:\Users\Veysel Saltan\documents\visual studio 2015\Projects\Odev5\Odev5\obj\Debug\Odev5.Kullanici.resources
+C:\Users\Veysel Saltan\documents\visual studio 2015\Projects\Odev5\Odev5\obj\Debug\Odev5.KullaniciTanitma.resources
+C:\Users\Veysel Saltan\documents\visual studio 2015\Projects\Odev5\Odev5\obj\Debug\Odev5.Poliklinik.resources
+C:\Users\Veysel Saltan\documents\visual studio 2015\Projects\Odev5\Odev5\obj\Debug\Odev5.Polikliniktanitma.resources
+C:\Users\Veysel Saltan\documents\visual studio 2015\Projects\Odev5\Odev5\obj\Debug\Odev5.HastaBilgileri.resources
+C:\Users\Veysel Saltan\documents\visual studio 2015\Projects\Odev5\Odev5\obj\Debug\Odev5.Hastaislemleri.resources
+C:\Users\Veysel Saltan\documents\visual studio 2015\Projects\Odev5\Odev5\obj\Debug\Odev5.Taburcu.resources
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\Odev5\Odev5\obj\Debug\Odev5.DosyaBul.resources
+C:\Users\Veysel Saltan\documents\visual studio 2015\Projects\Odev5\Odev5\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Veysel Saltan\documents\visual studio 2015\Projects\Odev5\Odev5\obj\Debug\Odev5.FormRapor.resources
+C:\Users\Veysel Saltan\documents\visual studio 2015\Projects\Odev5\Odev5\obj\Debug\RdlCompile.cache
+C:\Users\Veysel Saltan\documents\visual studio 2015\Projects\Odev5\Odev5\obj\Debug\RdlCompile.compiled
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\Odev5\Odev5\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\Odev5\Odev5\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\Odev5\Odev5\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\Odev5\Odev5\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\Odev5\Odev5\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\Odev5\Odev5\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\Odev5\Odev5\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\Odev5\Odev5\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\Odev5\Odev5\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\Odev5\Odev5\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\Odev5\Odev5\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Veysel Saltan\Desktop\Projeler\Hastane_Otomasyonu\Odev5\bin\Debug\Odev5.exe.config
+C:\Users\Veysel Saltan\Desktop\Projeler\Hastane_Otomasyonu\Odev5\obj\Debug\Odev5.exe
+C:\Users\Veysel Saltan\Desktop\Projeler\Hastane_Otomasyonu\Odev5\obj\Debug\Odev5.pdb
