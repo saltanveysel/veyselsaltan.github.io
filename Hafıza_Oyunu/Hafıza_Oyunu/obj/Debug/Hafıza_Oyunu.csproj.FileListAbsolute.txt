@@ -1,0 +1,12 @@
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Hafıza_Oyunu\Hafıza_Oyunu\bin\Debug\Hafıza_Oyunu.exe.config
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Hafıza_Oyunu\Hafıza_Oyunu\bin\Debug\Hafıza_Oyunu.exe
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Hafıza_Oyunu\Hafıza_Oyunu\bin\Debug\Hafıza_Oyunu.pdb
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Hafıza_Oyunu\Hafıza_Oyunu\obj\Debug\Hafıza_Oyunu.csprojResolveAssemblyReference.cache
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Hafıza_Oyunu\Hafıza_Oyunu\obj\Debug\Hafıza_Oyunu.Properties.Resources.resources
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Hafıza_Oyunu\Hafıza_Oyunu\obj\Debug\Hafıza_Oyunu.csproj.GenerateResource.Cache
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Hafıza_Oyunu\Hafıza_Oyunu\obj\Debug\Hafıza_Oyunu.exe
+c:\users\veysel saltan\documents\visual studio 2015\Projects\Hafıza_Oyunu\Hafıza_Oyunu\obj\Debug\Hafıza_Oyunu.pdb
+C:\Users\Veysel Saltan\Documents\Visual Studio 2015\Projects\Hafıza_Oyunu\Hafıza_Oyunu\obj\Debug\Hafıza_Oyunu.Hafiza_Oyunu.resources
+C:\Users\Veysel Saltan\Desktop\Projeler\Hafıza_Oyunu\Hafıza_Oyunu\bin\Debug\Hafıza_Oyunu.exe.config
+C:\Users\Veysel Saltan\Desktop\Projeler\Hafıza_Oyunu\Hafıza_Oyunu\obj\Debug\Hafıza_Oyunu.exe
+C:\Users\Veysel Saltan\Desktop\Projeler\Hafıza_Oyunu\Hafıza_Oyunu\obj\Debug\Hafıza_Oyunu.pdb
