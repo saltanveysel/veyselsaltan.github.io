@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Bİlgi Yarışması</title>
+<link href='http://fonts.googleapis.com/css?family=Nova+Mono' rel='stylesheet' type='text/css' />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1><a href="index.html"><img src="images/img05.png" width="386" height="100" alt="anasayfa" /></a></h1>
+			</div>
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<li class="current_page_item"><a href="anasayfa.html">Anasayfa</a></li>
+			<li><a href="#">Arkadaşıma Gönder</a></li>
+			<li><a href="#">İstatistiklerim</a></li>
+			<li><a href="#">Kurallar</a></li>
+			<li><a href="#">Yeni Üyelik</a></li>
+			<li><a href="#">Soru Sor</a></li>
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+				<div class="orta">
+					<table border="0px" cellpadding="10px">
+					<tr><td><a href="#" ><div class="genelkultur"></div></a><br><center><font size="3" color="black" >Genel Kültür</font></center></td>
+					<td><a href="#" ><div class="spor"></div></a><br><center><font size="3" color="black">Spor</font></center></td>
+					<td><a href="#" ><div class="tarih"></div></a><br><center><font size="3" color="black">Tarih</font></center></td>
+					<td><a href="#" ><div class="muzik"></div></a><br><center><font size="3" color="black">Müzik</font></center></td>
+					<td><a href="#" ><div class="sinema"></div></a><br><center><font size="3" color="black">Sinema</font></center></td>
+					<td><a href="#" ><div class="edebiyat"></div></a><br><center><font size="3" color="black">Edebiyat</font></center></td>
+					<td><a href="#" ><div class="cografya"></div></a><br><center><font size="3" color="black">Coğrafya</font></center></td></tr>
+					</table>
+					<form action="#" name="yaris" method="post">
+					<input class="btn" type="submit" value="Yarışmaya Başla"/>
+					</form>
+					<?php
+						include 'sql_baglan.php';
+						session_start();
+						if(!isset($_SESSION["uye"])){
+						echo '
+						<html xmlns="http://www.w3.org/1999/xhtml">
+						<head>
+						<meta name="keywords" content="" />
+						<meta name="description" content="" />
+						<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+						<link href=\'http://fonts.googleapis.com/css?family=Nova+Mono\' rel=\'stylesheet\' type=\'text/css\' />
+						<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+						</head>
+						<body>
+						<div class="genel">
+						<div class="baslik">Üye Girişi</div>
+						<form action="denetim.php" name="uyelik" method="post">
+						<p>Kullanıcı Adı : <input type="text" name="username" /></p>
+						<p>Şifre : <input style="margin-left:42px;" type="password" name="sifre" /></p>
+						<p><input class="buton" type="submit" value="Giriş Yap"/></p>
+						<a href="#">Kayıt Ol</a>
+						</form>
+						</div>
+						</body>
+						</html>';
+						}?>
+						<?php
+						include 'sql_baglan.php';
+						session_start();
+						if(isset($_SESSION["uye"])){
+							echo '<html xmlns="http://www.w3.org/1999/xhtml">
+							<head>
+							<meta name="keywords" content="" />
+							<meta name="description" content="" />
+							<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+							<link href=\'http://fonts.googleapis.com/css?family=Nova+Mono\' rel=\'stylesheet\' type=\'text/css\' />
+							<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+							</head>
+							<body>
+							<div class="genel">
+							<div class="baslik">Üye</div>
+							<form action="#" name="uye_islem" method="post">
+							<p><input class="buton" style="float:left; margin-top:30px; font-size: 20px;" type="submit" value="İstatistiklerim"/></p>
+							<p><input class="buton" style="float:right; margin-top:30px; font-size: 20px;" type="submit" value="Çıkış Yap"/></p>
+							</form>
+							</div>
+							</body>
+							</html>';
+						}
+						
+					?>
+					
+					</div>
+					<table cellpadding="10px"><form action="#" name="yaris" method="post">
+					<tr><td><input class="btn2" type="submit" value="Nasıl oynanıyor?"></td>
+					<td><input class="btn2" type="submit" value="Üyelik gerekiyor mu?"></td>
+					<td><input class="btn2" type="submit" value="Kurallar nedir?"></td>
+					<td><input class="btn2" type="submit" value="Yeni Üye Ol"></td></tr></form></table>
+					<div class="siralama">
+					<div class="haftalik_siralama"><br><br><br><table><tr><td><font size="3" color="black">1.</font></td></tr><tr><td><hr class="style"></td></tr></table></div>
+					<div class="gunluk_siralama"><br><br><br><table><tr><td><font size="3" color="black">1.</font></td></tr><tr><td><hr class="style"></td></tr></table></div>
+					<div class="genel_siralama"></div></div>
+					
+				</div>
+				<!-- end #content -->
+				
+				<!-- end #sidebar -->
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+</div>
+<div id="footer">
+	<p>&copy; Untitled. All rights reserved. Design by <a href="http://templated.co" rel="nofollow">Veysel SALTAN</a>.</p>
+</div>
+<!-- end #footer -->
+</body>
+</html>
