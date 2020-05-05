@@ -1,0 +1,94 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, WebAdapt, WebComp;
+
+type
+  TForm1 = class(TForm)
+    OpenDialog1: TOpenDialog;
+    OpenDialog2: TOpenDialog;
+    Button4: TButton;
+    procedure Button4Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+--Tamer Bey'den aldýðým fonksiyon
+Function aradansec( text, ilk, son:String ): String;
+  begin
+    Delete(Text, 1, pos(ilk, Text) + Length(ilk)-1);
+    Result := Copy(Text, 1, Pos(Son, Text)-1);
+  end;
+
+
+procedure Compare(FileNameOne, FileNameTwo: string);
+var
+List1, List2: TStringList;
+i: integer;
+blok:string;
+begin
+
+try
+List1 := TStringList.Create;
+List2 := TStringList.Create;
+
+List1.LoadFromFile(FileNameOne);
+List2.LoadFromFile(FileNameTwo);
+repeat
+blok:=aradansec(List1.text,'CREATE PROCEDURE','END PROCEDURE')   ;
+ShowMessage(blok);
+List1.Text:=Copy(List1.Text,Pos('END PROCEDURE',List1.Text)+1,Length(List1.Text));
+until Pos('END PROCEDURE',List1.Text)=0;
+
+//compare the two strings, disregard case
+
+
+end;
+except
+ShowMessage('Cannot Create TStringList!');
+end;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+var
+old,new,total:string;
+begin
+OpenDialog1.Title:='Eski Dosyayý Seçiniz';
+  if OpenDialog1.Execute then
+  begin
+   old:=OpenDialog1.FileName;
+  end;
+  OpenDialog2.Title:='Yeni Dosyayý Seçiniz';
+  if OpenDialog2.Execute then
+  begin
+   new:=OpenDialog2.FileName;
+  end;
+  total:='C:\temp\test.txt';
+Compare(old,new);
+end;
+
+
+end.
+http://www.dersnotusitesi.com/yazi/delphi-opendialog-bileseni linkinden Opendialog
+http://www.delphiturkiye.com/forum/viewtopic.php?t=21733---aradan sec
+
+
+
+http://www.delphibasics.co.uk/RTL.asp?Name=delete
+http://www.delphiturkiye.com/forum/viewtopic.php?t=26196
+
+http://www.delphipages.com/forum/showthread.php?t=175139
+
+
+http://www.delphibasics.co.uk/RTL.asp?Name=copy

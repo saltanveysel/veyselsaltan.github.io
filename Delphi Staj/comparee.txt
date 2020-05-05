@@ -1,0 +1,227 @@
+unit Compare;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, WebAdapt, WebComp, ComCtrls, ExtCtrls, cxGraphics,
+  cxControls, cxLookAndFeels, cxLookAndFeelPainters, cxContainer, cxEdit,
+  cxGroupBox, cxRadioGroup, cxListView, cxStyles, cxCustomData, cxFilter,
+  cxData, cxDataStorage, cxNavigator, DB, cxDBData, cxGridCustomTableView,
+  cxGridTableView, cxGridDBTableView, cxGridLevel, cxClasses,
+  cxGridCustomView, cxGrid, Menus,Clipbrd;
+
+type
+  TForm1 = class(TForm)
+    OpenDialog1: TOpenDialog;
+    Button4: TButton;
+    liste_gor: TListView;
+    OpenDialog2: TOpenDialog;
+    cxSecim: TcxRadioGroup;
+    pm1: TPopupMenu;
+    Kopyala1: TMenuItem;
+    procedure Button4Click(Sender: TObject);
+    procedure Kopyala1Click(Sender: TObject);
+    procedure liste_gorKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+  private
+    { Private declarations }
+  procedure Compare(FileNameOne, FileNameTwo: string;pHepsimi:Boolean=False);
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+Function aradansec( text, ilk, son:String ): String;
+  begin
+    Delete(Text, 1, pos(ilk, Text) + Length(ilk)-1);
+    Result := Copy(Text, 1, Pos(Son, Text)-1);
+
+  end;
+
+procedure TForm1.Compare(FileNameOne, FileNameTwo: string;pHepsimi:Boolean=False);
+ const
+   karar='karþýlaþýrýldý';
+ var
+  List1,
+  List2,
+  blok,
+  blok2,
+  List2Yedek: TStringList;
+
+  i,j,
+  a,
+  b,
+  min,
+  aynimi,
+  aynimi2: integer;
+
+  procadi,
+  procadi2,
+  degisen,
+  basla,
+  bitir,
+  namebitis:string;
+
+  liste:TListItem;
+
+begin
+  j:=0;
+  while j<=3 do begin
+    if pHepsimi<>False
+    then cxSecim.ItemIndex:=j;
+    case cxSecim.ItemIndex of
+      0:
+      begin
+         basla:='TABLE';
+         bitir:=';';
+         namebitis:='(';
+         if pHepsimi=False
+         then j:=4;
+      end;
+      1:
+      begin
+         basla:='PROCEDURE';
+         bitir:='END PROCEDURE';
+         namebitis:='(';
+         if pHepsimi=False
+         then j:=4;
+      end;
+      2:
+      begin
+         basla:='TRIGGER';
+         bitir:=';';
+         namebitis:=' ON';
+         if pHepsimi=False
+         then j:=4;
+      end;
+      3:
+      begin
+         basla:='VIEW';
+         bitir:=';';
+         namebitis:='(';
+         if pHepsimi=False
+         then j:=4;
+      end;
+    end;
+    try
+      try
+        List1 := TStringList.Create;
+        List2 := TStringList.Create;
+        blok := TStringList.Create;
+        blok2 := TStringList.Create;
+        List2Yedek:=TStringList.Create;
+        List1.LoadFromFile(FileNameOne);
+        List2.LoadFromFile(FileNameTwo);
+        repeat
+          blok.Text:=aradansec(UpperCase(List1.text),'CREATE '+basla,bitir);
+          procadi:=aradansec(blok.Text,'.',namebitis);
+          List2Yedek.Text:=List2.Text;
+            repeat
+            degisen:='';
+            blok2.Text:=aradansec(UpperCase(List2Yedek.Text),'CREATE '+basla,bitir);
+            procadi2:=aradansec(blok2.Text,'.',namebitis);
+            aynimi:=CompareStr(blok.Text,blok2.Text);
+            if ( (procadi=procadi2) and(aynimi<>0))
+            then begin
+              if blok.Count<blok2.Count
+              then begin
+                min:=blok.Count-1;
+              end
+              else
+              begin
+                min:=blok2.Count-1;
+              end;
+                b:=-1;
+                a:=-1;
+                while ((a<min-1) and (b<min-1)) do
+                begin
+                  b:=b+1;
+                  a:=a+1;
+                  aynimi2:=CompareStr(blok.Strings[a],blok2.Strings[b]);
+                  if(aynimi2<>0)
+                  then begin
+                    if (blok.Strings[a]='') And (blok2.Strings[b]<>'')
+                    then begin
+                      b:=b-1;
+                      Continue;
+                    end
+                    else if(blok.Strings[a]<>'') And (blok2.Strings[b]='')
+                    then begin
+                      a:=a-1;
+                      Continue;
+                    end;
+                    liste_gor.Items.BeginUpdate;
+                    liste:=liste_gor.Items.Add;
+                    liste.Caption:= procadi;
+                    liste.SubItems.Add(IntToStr(a+1));
+                    liste.SubItems.Add(basla);
+                    liste.SubItems.Add(blok.Strings[a]);
+                    liste_gor.Items.EndUpdate;
+                  end;
+         end;
+         end;
+
+           List2Yedek.Text:=StringReplace(UpperCase(List2Yedek.Text),'CREATE '+basla+blok2[0],karar,[rfReplaceAll, rfIgnoreCase])   ;
+          until Pos('CREATE '+basla,UpperCase(List2Yedek.Text))=0;
+                 
+          List1.Text:=StringReplace(UpperCase(List1.Text),'CREATE '+basla+blok[0],karar,[rfReplaceAll, rfIgnoreCase])   ;
+        until  Pos('CREATE '+basla,UpperCase(List1.Text))=0;
+      except
+        ShowMessage('TStringList Oluþturulamadý!');
+      end;
+    finally
+      List1.Free;
+      List2.Free;
+      blok.Free;
+      blok2.Free;
+      List2Yedek.Free;
+    end;
+  j:=j+1;
+  end;
+end;
+procedure TForm1.Button4Click(Sender: TObject);
+ var
+  old,
+  new:string;
+begin
+  liste_gor.Clear;
+  OpenDialog1.Title:='Eski Dosyayý Seçiniz';
+  if OpenDialog1.Execute then
+  begin
+    old:=OpenDialog1.FileName;
+  end;
+  OpenDialog2.Title:='Yeni Dosyayý Seçiniz';
+  if OpenDialog2.Execute then
+  begin
+    new:=OpenDialog2.FileName;
+  end;
+  if (old='') or (new='')
+  then begin
+    ShowMessage('Lütfen Dosya Seçiniz');
+    exit;
+  end;
+  if cxSecim.ItemIndex=4
+  then Compare(old,new,true)
+  else Compare(old,new);
+  ShowMessage('Arama Sonlandý');
+end;
+procedure TForm1.Kopyala1Click(Sender: TObject);
+begin
+  Clipboard.AsText := liste_gor.Selected.Caption;
+end;
+
+procedure TForm1.liste_gorKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if(Shift=[ssCtrl]) and (UpCase(Char(key))='C')
+  then begin
+    Clipboard.AsText:=liste_gor.Selected.Caption;
+  end;
+end;
+end.

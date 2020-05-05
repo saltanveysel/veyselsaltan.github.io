@@ -1,0 +1,129 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, WebAdapt, WebComp;
+
+type
+  TForm1 = class(TForm)
+    OpenDialog1: TOpenDialog;
+    OpenDialog2: TOpenDialog;
+    Button4: TButton;
+    procedure Button4Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+Function aradansec( text, ilk, son:String ): String;
+  begin
+    Delete(Text, 1, pos(ilk, Text) + Length(ilk)-1);
+    Result := Copy(Text, 1, Pos(Son, Text)-1);
+  end;
+procedure Compare(FileNameOne, FileNameTwo: string);
+var
+List1, List2,blok,blok2: TStringList;
+i,blok1uzunluk,blok2uzunluk: integer;
+procadi,procadi2:string;
+begin
+
+try
+List1 := TStringList.Create;
+List2 := TStringList.Create;
+
+List1.LoadFromFile(FileNameOne);
+List2.LoadFromFile(FileNameTwo);
+repeat
+blok:=aradansec(List1.text,'CREATE PROCEDURE','END PROCEDURE')   ;
+ShowMessage(blok);
+blok1uzunluk:=Length(blok.Text);
+procadi:=aradansec(blok.Text,'"informix"','(' );
+repeat
+blok2:=aradansec(List2.text,'CREATE PROCEDURE','END PROCEDURE')   ;
+blok2uzunluk:=Length(blok2.Text);
+procadi2:=aradansec(blok2.Text,'"informix"','(' );
+  if (blok1uzunluk<>blok2uzunluk) and (procadi=procadi2)
+  then
+  begin
+    if(blok1uzunluk>blok2uzunluk)
+    then
+    begin
+    max:=blok1uzunluk;
+    else max:=blok2uzunluk;
+    end;
+    for i:=0 to max do
+    begin
+      if(Length(blok.Strings[i])<>Length(blok2.Strings[i])
+      then
+      begin
+      ShowMessage(procadi+' nin'+IntToStr(i+1)+'satýrý');
+      break;
+      end;
+    end;
+  end;
+ShowMessage(blok2);
+List2.Text:=Copy(List2.Text,Pos('END PROCEDURE',List2.Text)+1,Length(List2.Text));
+until Pos('END PROCEDURE',List2.Text)=0;
+List1.Text:=Copy(List1.Text,Pos('END PROCEDURE',List1.Text)+1,Length(List1.Text));
+until Pos('END PROCEDURE',List1.Text)=0;
+
+end;
+except
+ShowMessage('Cannot Create TStringList!');
+end;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+var
+old,new,total:string;
+begin
+OpenDialog1.Title:='Eski Dosyayý Seçiniz';
+  if OpenDialog1.Execute then
+  begin
+   old:=OpenDialog1.FileName;
+  end;
+  ShowMessage(old);
+  OpenDialog2.Title:='Yeni Dosyayý Seçiniz';
+  if OpenDialog2.Execute then
+  begin
+   new:=OpenDialog2.FileName;
+  end;
+  ShowMessage(new);
+  total:='C:\temp\test.txt';
+Compare(old,new);
+end;
+
+for i := 0 to List1.Count - 1 do
+begin
+if Pos('CREATE PROCEDURE',List1.Strings[i])>0 then
+begin
+ShowMessage('Create Procedure Index ' + IntToStr(i));
+end;
+if Pos('END PROCEDURE',List1.Strings[i])>0 then
+begin
+ShowMessage('End Procedure Index ' + IntToStr(i));
+end;
+
+//compare the two strings, disregard case
+
+
+end.
+
+https://www.frmtr.com/delphi/297570-delphide-string-fonksiyonlari.html
+
+
+--LÝNK
+
+http://www.delphiturkiye.com/forum/viewtopic.php?t=26196
+ve pdf
+
+
